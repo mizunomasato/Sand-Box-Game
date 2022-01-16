@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Blockset: MonoBehaviour
 {
     Vector2 displayCenter;
     private Vector3 pos;
+   
 
     [SerializeField]
     private GameObject blockPrefab;
@@ -36,9 +38,14 @@ public class Blockset: MonoBehaviour
             Instantiate(blockPrefab, pos, Quaternion.identity);
 
         }
-    if (Input.GetMouseButtonDown(0) && itemScript.haveItem)//左クリックを押すかつitemScriptのとき破壊する
+        if (Input.GetMouseButtonDown(0) && itemScript.haveItem)//左クリックを押すかつitemScriptのとき破壊する
         {
-            Destroy(hit.collider.gameObject);
+            if (!gameObject.CompareTag("wall")) {
+                Destroy(this.gameObject);
+            }
+               
+            
+            
         }
     }
 }

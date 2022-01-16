@@ -6,9 +6,9 @@ public class MapMaker : MonoBehaviour
 {
     private float SeedX, SeedZ; //マップの生成をランダムにするための変数
     [SerializeField]
-    private float Width = 80;　//マップの横幅
+    private float Width = 90;//マップの横幅
     [SerializeField]
-    private float Depth = 80;　　//マップの奥行き
+    private float Depth = 90;//マップの奥行き
 
     [SerializeField]
     private bool NeedToCollider = false;　//当たり判定をつけるかどうか
